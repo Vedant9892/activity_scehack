@@ -4,7 +4,7 @@
   "description": "Tracks browser activity and adapts notification delivery.",
   "version": "0.1.0",
   "permissions": ["tabs", "idle", "storage", "alarms"],
-  "host_permissions": ["http://localhost:8000/*"],
+  "host_permissions": ["http://*/*"],
   "background": {
     "service_worker": "background.js",
     "type": "module"

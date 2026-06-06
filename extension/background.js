@@ -29,6 +29,11 @@ async function sendActivityTick() {
 }
 
 async function bootstrap() {
+  const stored = await chrome.storage.sync.get(["backendBaseUrl"]);
+  if (!stored.backendBaseUrl) {
+    await chrome.storage.sync.set({ backendBaseUrl: "http://127.0.0.1:8000" });
+  }
+
   await initializeActivityTracker();
 
   chrome.alarms.create(ACTIVITY_ALARM, { periodInMinutes: 5 / 60 });

@@ -57,6 +57,7 @@ export async function getActivityPayload() {
   await refreshIdleTime();
 
   return {
+    user_id: "demo-user",
     active_url: trackerState.activeUrl,
     tab_switch_count: trackerState.tabSwitchCount,
     tab_switches_last_5s: trackerState.tabSwitchesLast5s,
